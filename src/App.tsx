@@ -3,6 +3,7 @@ import Healthoverview from './pages/Healthoverview';
 import CognitiveHealth from './pages/CognitiveHealth';
 import { data } from './utils/mockData';
 import './App.css';
+import ProgressOverTime from './pages/ProgressOverTime';
 import { Page, Document, StyleSheet, PDFViewer } from '@react-pdf/renderer';
 
 // Create styles
@@ -34,6 +35,7 @@ export default function App() {
   return (
     <PDFViewer width="100%" height="800">
       <Document>
+        <ProgressOverTime />
         <Healthoverview data={data} />
         <CognitiveHealth data={data} />
       </Document>

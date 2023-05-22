@@ -2,7 +2,8 @@ import { View, Page, StyleSheet } from '@react-pdf/renderer';
 import Header from '../sections/Header';
 import Summary from '../sections/summaryWithPercentage';
 import TextScore from '../sections/TestScors';
-import Note from '../components/Note';
+// import Note from '../components/Note';
+import Column from '../components/Column';
 
 const styles = StyleSheet.create({
   page: {
@@ -26,6 +27,51 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
 });
+
+const myRowDef = {
+  titleProps: {},
+  columns: [
+    {
+      titleProps: { fontSize: 20 },
+      fontValueColor: 'blue',
+      titleFOntColor: 'black',
+    },
+    {
+      titleProps: { fontSize: 20 },
+    },
+    {
+      titleProps: { fontSize: 20 },
+    },
+  ],
+};
+
+// const defs = {
+//   rows: [{ ...myRowDef }, { ...myRowDef }, { ...myRowDef }],
+// };
+// row.map((rowDef) => {
+//   <Row rowProps={rowDef} data={chValues} />;
+// });
+
+// // inside of your row component
+// rowDef.columns.map((columnDef) => {
+//   <Column columnProps={columnDef} data={data} />;
+// });
+
+// // inside of your column or cell component
+// const cellIndex = rowIndex * columnIndex;
+// const cellDate = chValues[cellIndex];
+
+const chValues = [
+  { name: 'Subject Score', value: 100 },
+  { name: 'Standard Score', value: 103 },
+  { name: '% Percentile', value: '58%' },
+  { name: 'Subject Score', value: 100 },
+  { name: 'Standard Score', value: 103 },
+  { name: '% Percentile', value: '58%' },
+  { name: 'Subject Score', value: 100 },
+  { name: 'Standard Score', value: 103 },
+  { name: '% Percentile', value: '58%' },
+];
 
 const CognitiveHealth = ({ data }: { data: any }) => {
   const gridContent = [
